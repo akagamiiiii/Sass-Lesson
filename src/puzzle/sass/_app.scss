@@ -1,0 +1,84 @@
+@use './variable' as *;
+@use './mixin' as *;
+
+header {
+  @include locate(flex-end, center);
+  @include display(flex);
+  @include size(400px, 100px);
+  @include background-color($navy);
+}
+
+.header-inner {
+  @include margin(20px, 20px, 0, 0);
+  @include size(160px, 60px);
+  @include background-color($white);
+  font-size: 0;
+}
+
+$square-colors: (
+  purple: #a9004b,
+  orange: #ff863f,
+  blue: #0000ff
+);
+
+@each $name, $color in $square-colors {
+  .square-#{$name} {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: $color;
+    margin: 10px 0 0 10px;
+  }
+}
+
+$rectangle-colors: (
+  purple: #a9004b,
+  orange: #ff863f,
+  blue: #0000ff
+);
+
+@each $name, $color in $rectangle-colors {
+  .rectangle-#{$name} {
+    width: 140px;
+    height: 40px;
+    background-color: $color;
+  }
+}
+
+.sidebar {
+  @include size(150px, 250px);
+  @include background-color($green);
+}
+
+main {
+  @include size(250px, 250px);
+  @include background-color($red);
+}
+
+.main-inner {
+  @include locate(center, center);
+  @include display(flex);
+  @include size(150px, 50px);
+  @include background-color($white);
+}
+
+.top {
+  @include margin(40px, 0, 0, 40px);
+}
+
+.middle {
+  @include margin(10px, 0, 0, 40px);
+}
+
+.under {
+  @include margin(10px, 0, 0, 40px);
+}
+
+.block {
+  @include display(flex);
+}
+
+footer {
+  @include size(400px, 100px);
+  @include background-color($brown);
+}
