@@ -1,0 +1,22 @@
+@mixin locate($justify, $align) {
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin display($display) {
+  display: $display
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+  margin: $top $right $bottom $left;
+}
+
+@mixin background-color($color) {
+  background-color: $color;
+}
+
